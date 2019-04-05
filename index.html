@@ -6,9 +6,11 @@
 </head>
 <body>
 	<div id="headerName">
-		<h1 v-if = "gender != 'female' && gender != 'male'">Introduce un género válido, humano</h1>
-		<h1 v-else-if = "gender == 'female'">Hello, miss {{ name }}</h1>
-		<h1 v-else>Hello, mr {{ name }}</h1>
+		<div v-show = "name && gender">
+			<h1 v-if = "gender != 'female' && gender != 'male'">Introduce un género válido, humano</h1>
+			<h1 v-else-if = "gender == 'female'">Hello, miss {{ name }}</h1>
+			<h1 v-else>Hello, mr {{ name }}</h1>
+		</div>
 		<p>Enter your gender:</p>
 		<input type="text" v-model = "gender">
 		<p>Enter your name:</p>
