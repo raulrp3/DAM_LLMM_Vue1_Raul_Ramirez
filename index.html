@@ -6,7 +6,11 @@
 </head>
 <body>
 	<div id="headerName">
-		<h1>Hello, {{ name }}</h1>
+		<h1 v-if = "gender != 'female' && gender != 'male'">Introduce un género válido, humano</h1>
+		<h1 v-else-if = "gender == 'female'">Hello, miss {{ name }}</h1>
+		<h1 v-else>Hello, mr {{ name }}</h1>
+		<p>Enter your gender:</p>
+		<input type="text" v-model = "gender">
 		<p>Enter your name:</p>
 		<input type="text" v-model = "name">
 	</div>
@@ -16,7 +20,8 @@
 	new Vue({
 		el: "#headerName",
 		data: {
-			name: ""
+			name: "",
+			gender: ""
 		}
 	});
 </script>
