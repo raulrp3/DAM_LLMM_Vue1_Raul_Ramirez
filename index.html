@@ -7,8 +7,8 @@
 <body>
 	<div id="app">
 		<template v-if = "name && gender">
-			<h1 v-if = "gender != 'female' && gender != 'male'">Introduce un género válido, humano</h1>
-			<h1 v-else-if = "gender == 'female'">Hello, miss {{ name }}</h1>
+			<h1 v-if = "gender.toLowerCase() != 'female' && gender.toLowerCase() != 'male'">Introduce un género válido, humano</h1>
+			<h1 v-else-if = "gender.toLowerCase() == 'female'">Hello, miss {{ name }}</h1>
 			<h1 v-else>Hello, mr {{ name }}</h1>
 		</template>
 		<p>Enter your gender:</p>
