@@ -5,12 +5,12 @@
 	<title>EJERCICIOS VUE</title>
 </head>
 <body>
-	<div id="headerName">
-		<div v-show = "name && gender">
+	<div id="app">
+		<template v-if = "name && gender">
 			<h1 v-if = "gender != 'female' && gender != 'male'">Introduce un género válido, humano</h1>
 			<h1 v-else-if = "gender == 'female'">Hello, miss {{ name }}</h1>
 			<h1 v-else>Hello, mr {{ name }}</h1>
-		</div>
+		</template>
 		<p>Enter your gender:</p>
 		<input type="text" v-model = "gender">
 		<p>Enter your name:</p>
@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script>
 	new Vue({
-		el: "#headerName",
+		el: "#app",
 		data: {
 			name: "",
 			gender: ""
